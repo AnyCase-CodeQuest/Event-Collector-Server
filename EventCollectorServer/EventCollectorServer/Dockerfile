@@ -1,0 +1,19 @@
+FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM microsoft/dotnet:2.1-sdk AS build
+WORKDIR /src
+COPY ["EventCollectorServer/EventCollectorServer.csproj", "EventCollectorServer/"]
+RUN dotnet restore "EventCollectorServer/EventCollectorServer.csproj"
+COPY . .
+WORKDIR "/src/EventCollectorServer"
+RUN dotnet build "EventCollectorServer.csproj" -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish "EventCollectorServer.csproj" -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "EventCollectorServer.dll"]
