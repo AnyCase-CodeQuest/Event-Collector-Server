@@ -1,8 +1,9 @@
 ﻿namespace EventCollectorServer.Database.Entities.Enums
 {
-	public enum DeviceType
+	public enum DeviceMessageDirection
 	{
 		NotSpecified = 0,
-		OfficeClimateSensorsSet = 1
+		Inbound = 1,
+		Outbound = 2
 	}
 }
