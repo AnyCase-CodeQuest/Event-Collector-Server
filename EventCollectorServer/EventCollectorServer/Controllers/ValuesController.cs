@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventCollectorServer.Controllers
+namespace EventCollectorServer.Api.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]

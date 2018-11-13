@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Web", "EventCollectorServer\EventCollectorServer.Web.csproj", "{5489D63B-39DA-4E67-894B-FF7C811B0CDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Api", "EventCollectorServer\EventCollectorServer.Api.csproj", "{5489D63B-39DA-4E67-894B-FF7C811B0CDF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Web.Entities", "EventCollectorServer.Web.Entities\EventCollectorServer.Web.Entities.csproj", "{D14394D7-2D8D-4C84-BB63-12200F0BB903}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Entities", "EventCollectorServer.Database.Entities\EventCollectorServer.Database.Entities.csproj", "{7DD9F687-1E70-41CB-875C-E9161A5325AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Interfaces", "EventCollectorServer.Database.Interfaces\EventCollectorServer.Database.Interfaces.csproj", "{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Repositories", "EventCollectorServer.Database.Repositories\EventCollectorServer.Database.Repositories.csproj", "{9B205244-7FC1-42CC-94AF-73894B503FF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Core", "EventCollectorServer.Database.Core\EventCollectorServer.Database.Core.csproj", "{10FA29D7-5C05-46AD-9DE3-448EBCE54812}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +35,27 @@ Global
 		{7DD9F687-1E70-41CB-875C-E9161A5325AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DD9F687-1E70-41CB-875C-E9161A5325AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DD9F687-1E70-41CB-875C-E9161A5325AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10FA29D7-5C05-46AD-9DE3-448EBCE54812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10FA29D7-5C05-46AD-9DE3-448EBCE54812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10FA29D7-5C05-46AD-9DE3-448EBCE54812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10FA29D7-5C05-46AD-9DE3-448EBCE54812}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DD9F687-1E70-41CB-875C-E9161A5325AC} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
+		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
+		{9B205244-7FC1-42CC-94AF-73894B503FF2} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
+		{10FA29D7-5C05-46AD-9DE3-448EBCE54812} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05256B4E-6882-473F-B1C3-996F001C35AC}
