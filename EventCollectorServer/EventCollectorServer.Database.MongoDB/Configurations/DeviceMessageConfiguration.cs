@@ -3,7 +3,7 @@ using EventCollectorServer.Database.Entities;
 using EventCollectorServer.Database.Interfaces;
 using MongoDB.Bson.Serialization;
 
-namespace EventCollectorServer.Database.Core.Configurations
+namespace EventCollectorServer.Database.MongoDB.Configurations
 {
 	public class DeviceMessageConfiguration : IEntityMapConfiguration
 	{
