@@ -3,21 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Api", "EventCollectorServer\EventCollectorServer.Api.csproj", "{5489D63B-39DA-4E67-894B-FF7C811B0CDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Api", "EventCollectorServer\EventCollectorServer.Api.csproj", "{5489D63B-39DA-4E67-894B-FF7C811B0CDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Web.Entities", "EventCollectorServer.Web.Entities\EventCollectorServer.Web.Entities.csproj", "{D14394D7-2D8D-4C84-BB63-12200F0BB903}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Web.Entities", "EventCollectorServer.Web.Entities\EventCollectorServer.Web.Entities.csproj", "{D14394D7-2D8D-4C84-BB63-12200F0BB903}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Entities", "EventCollectorServer.Database.Entities\EventCollectorServer.Database.Entities.csproj", "{7DD9F687-1E70-41CB-875C-E9161A5325AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Entities", "EventCollectorServer.Database.Entities\EventCollectorServer.Database.Entities.csproj", "{7DD9F687-1E70-41CB-875C-E9161A5325AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Interfaces", "EventCollectorServer.Database.Interfaces\EventCollectorServer.Database.Interfaces.csproj", "{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Interfaces", "EventCollectorServer.Database.Interfaces\EventCollectorServer.Database.Interfaces.csproj", "{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Repositories", "EventCollectorServer.Database.Repositories\EventCollectorServer.Database.Repositories.csproj", "{9B205244-7FC1-42CC-94AF-73894B503FF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Repositories", "EventCollectorServer.Database.Repositories\EventCollectorServer.Database.Repositories.csproj", "{9B205244-7FC1-42CC-94AF-73894B503FF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.Core", "EventCollectorServer.Database.Core\EventCollectorServer.Database.Core.csproj", "{10FA29D7-5C05-46AD-9DE3-448EBCE54812}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Core", "EventCollectorServer.Database.Core\EventCollectorServer.Database.Core.csproj", "{10FA29D7-5C05-46AD-9DE3-448EBCE54812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Database.MongoDB", "EventCollectorServer.Database.MongoDB\EventCollectorServer.Database.MongoDB.csproj", "{F691FA3F-F0CE-4E11-8623-7A0E788231BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.MongoDB", "EventCollectorServer.Database.MongoDB\EventCollectorServer.Database.MongoDB.csproj", "{F691FA3F-F0CE-4E11-8623-7A0E788231BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{99947C9E-258C-4505-A60E-6518AE2CF73D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Infrastructure.Interfaces", "EventCollectorServer.Infrastructure.Interfaces\EventCollectorServer.Infrastructure.Interfaces.csproj", "{EA4C568A-248F-4315-8919-F728154D99B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generic", "Generic", "{2D9A9AB8-220E-466F-8856-F748A3667625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.DependencyInjection", "EventCollectorServer.DependencyInjection\EventCollectorServer.DependencyInjection.csproj", "{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Infrastructure.Application", "EventCollectorServer.Infrastructure.Application\EventCollectorServer.Infrastructure.Application.csproj", "{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +63,18 @@ Global
 		{F691FA3F-F0CE-4E11-8623-7A0E788231BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F691FA3F-F0CE-4E11-8623-7A0E788231BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F691FA3F-F0CE-4E11-8623-7A0E788231BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA4C568A-248F-4315-8919-F728154D99B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4C568A-248F-4315-8919-F728154D99B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4C568A-248F-4315-8919-F728154D99B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4C568A-248F-4315-8919-F728154D99B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +85,9 @@ Global
 		{9B205244-7FC1-42CC-94AF-73894B503FF2} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
 		{10FA29D7-5C05-46AD-9DE3-448EBCE54812} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
 		{F691FA3F-F0CE-4E11-8623-7A0E788231BD} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
+		{EA4C568A-248F-4315-8919-F728154D99B2} = {99947C9E-258C-4505-A60E-6518AE2CF73D}
+		{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24} = {2D9A9AB8-220E-466F-8856-F748A3667625}
+		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A} = {99947C9E-258C-4505-A60E-6518AE2CF73D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05256B4E-6882-473F-B1C3-996F001C35AC}

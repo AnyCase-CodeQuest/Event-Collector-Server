@@ -15,4 +15,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EventCollectorServer.DependencyInjection\EventCollectorServer.DependencyInjection.csproj" />
+    <ProjectReference Include="..\EventCollectorServer.Infrastructure.Interfaces\EventCollectorServer.Infrastructure.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

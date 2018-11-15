@@ -2,6 +2,9 @@
 {
 	public interface IEntityMapConfiguration
 	{
+		/// <summary>
+		/// Configures this instance.
+		/// </summary>
 		void Configure();
 	}
 }

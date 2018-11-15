@@ -9,15 +9,12 @@ namespace EventCollectorServer.Database.MongoDB
 {
 	public class MongoRepository<TEntity> : IRepository<TEntity>
 	{
-		private readonly RepositoryKeys _keys;
 		private readonly string _connectionString;
 		private readonly string _databaseName;
 
-		private readonly MongoServer _server;
 		private readonly MongoClient _client;
-		private readonly MongoDatabase _db;
 
-		public MongoRepository(RepositoryKeys keys, string connectionString, string databaseName)
+		public MongoRepository(ISettings)
 		{
 			_keys = keys;
 			_connectionString = connectionString;
