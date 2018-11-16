@@ -10,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Modules\" />
+    <ProjectReference Include="..\EventCollectorServer.Database.Core\EventCollectorServer.Database.Core.csproj" />
+    <ProjectReference Include="..\EventCollectorServer.Database.Repositories\EventCollectorServer.Database.Repositories.csproj" />
+    <ProjectReference Include="..\EventCollectorServer.Infrastructure.Application\EventCollectorServer.Infrastructure.Application.csproj" />
   </ItemGroup>
 
 </Project>

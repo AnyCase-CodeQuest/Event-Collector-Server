@@ -6,7 +6,7 @@ namespace EventCollectorServer.Database.Interfaces
 	/// Base Repositories functionality.
 	/// </summary>
 	/// <typeparam name="T">Entity type.</typeparam>
-	public interface IRepository<T> where T : class
+	public interface IRepository<TEntity> where TEntity : class
 	{
 		///// <summary>
 		///// Creates the specified entity.

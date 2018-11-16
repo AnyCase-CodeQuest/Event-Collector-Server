@@ -2,30 +2,27 @@
 using System.Collections.Generic;
 using System.Text;
 using EventCollectorServer.Database.Interfaces;
+using EventCollectorServer.Infrastructure.Interfaces.Configurations;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace EventCollectorServer.Database.MongoDB
 {
-	public class MongoRepository<TEntity> : IRepository<TEntity>
+	public class MongoRepository<TEntity> : IRepository<TEntity> where TEntity : class
 	{
-		private readonly string _connectionString;
-		private readonly string _databaseName;
+		private readonly IApplicationConfiguration applicationConfiguration;
+		private readonly string connectionString;
 
-		private readonly MongoClient _client;
+		private readonly MongoClient client;
 
-		public MongoRepository(ISettings)
+		public MongoRepository(IApplicationConfiguration applicationConfiguration)
 		{
-			_keys = keys;
-			_connectionString = connectionString;
-			_databaseName = databaseName;
+			connectionString = applicationConfiguration.Secrets.ConnectionString;
 
-			_client = new MongoClient(connectionString);
-			_server = _client.GetServer();
-			_db = _server.GetDatabase(databaseName);
+			client = new MongoClient(connectionString);
 		}
 
-		public TEntity Single<TEntity>(object key) where TEntity : class, new()
+		public TEntity Single(object key) where TEntity : class, new()
 		{
 			var collection = GetCollection<TEntity>();
 			var query = new QueryDocument("_id", BsonValue.Create(key));
