@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using EventCollectorServer.Database.Core;
 using EventCollectorServer.Database.Interfaces;
-using EventCollectorServer.Database.Repositories;
+using EventCollectorServer.Database.MongoDB;
 
 namespace EventCollectorServer.DependencyInjection.Modules
 {
@@ -22,7 +22,7 @@ namespace EventCollectorServer.DependencyInjection.Modules
 				.InstancePerLifetimeScope();
 
 			builder
-				.RegisterAssemblyTypes(typeof(BaseRepository<>).Assembly)
+				.RegisterAssemblyTypes(typeof(MongoRepository<>).Assembly)
 				.AsImplementedInterfaces()
 				.InstancePerLifetimeScope();
 		}
