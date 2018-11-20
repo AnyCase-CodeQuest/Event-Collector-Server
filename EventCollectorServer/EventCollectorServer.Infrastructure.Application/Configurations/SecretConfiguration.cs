@@ -14,5 +14,8 @@ namespace EventCollectorServer.Infrastructure.Application.Configurations
 
 		/// <inheritdoc />
 		public string ConnectionString { get; set; }
+
+		/// <inheritdoc />
+		public string DatabaseName { get; set; }
 	}
 }

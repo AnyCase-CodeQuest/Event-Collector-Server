@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EventCollectorServer.Database.Entities\EventCollectorServer.Database.Entities.csproj" />
     <ProjectReference Include="..\EventCollectorServer.Database.Interfaces\EventCollectorServer.Database.Interfaces.csproj" />
+    <ProjectReference Include="..\EventCollectorServer.Infrastructure.Interfaces\EventCollectorServer.Infrastructure.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

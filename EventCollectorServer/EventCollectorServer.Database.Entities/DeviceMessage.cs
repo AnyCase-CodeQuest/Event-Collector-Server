@@ -7,6 +7,8 @@ namespace EventCollectorServer.Database.Entities
 	{
 		public Guid Id { get; set; }
 
+		public Guid DeviceId { get; set; }
+
 		public DateTime CreatedOn { get; set; }
 
 		public DeviceMessageDirection Direction { get; set; }

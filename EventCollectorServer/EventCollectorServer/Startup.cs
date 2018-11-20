@@ -1,6 +1,5 @@
 ﻿using System;
 using EventCollectorServer.DependencyInjection;
-using EventCollectorServer.Infrastructure.Interfaces;
 using EventCollectorServer.Infrastructure.Interfaces.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

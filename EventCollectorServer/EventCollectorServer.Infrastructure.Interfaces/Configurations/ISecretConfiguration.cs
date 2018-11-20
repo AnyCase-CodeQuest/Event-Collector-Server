@@ -9,5 +9,10 @@
 		/// Gets or sets the connection string.
 		/// </summary>
 		string ConnectionString { get; set; }
+
+		/// <summary>
+		/// Gets or sets the database name.
+		/// </summary>
+		string DatabaseName { get; set; }
 	}
 }

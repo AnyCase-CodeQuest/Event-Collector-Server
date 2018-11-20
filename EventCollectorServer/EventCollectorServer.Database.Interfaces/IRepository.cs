@@ -1,34 +1,20 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
 namespace EventCollectorServer.Database.Interfaces
 {
 	/// <summary>
 	/// Base Repositories functionality.
 	/// </summary>
-	/// <typeparam name="T">Entity type.</typeparam>
-	public interface IRepository<TEntity> where TEntity : class
+	/// <typeparam name="TEntity">Entity type.</typeparam>
+	public interface IRepository<in TEntity> where TEntity : class
 	{
-		///// <summary>
-		///// Creates the specified entity.
-		///// </summary>
-		///// <param name="entity">The entity.</param>
-		///// <returns>
-		///// A task that represents the asynchronous Add operation. The task result contains the added entity.
-		///// </returns>
-		//Task<T> AddAsync(T entity);
-
-		///// <summary>
-		///// Updates the specified entity.
-		///// </summary>
-		///// <param name="entity">The entity.</param>
-		///// <returns>The updated entity.</returns>
-		//T Update(T entity);
-
-		///// <summary>
-		///// Deletes the specified entity.
-		///// </summary>
-		///// <param name="entity">The entity.</param>
-		///// <returns>The deleted entity.</returns>
-		//T Delete(T entity);
+		/// <summary>
+		/// Inserts the asynchronous.
+		/// </summary>
+		/// <param name="entity">The entity.</param>
+		/// <param name="cancellationToken">The cancellation token.</param>
+		/// <returns></returns>
+		Task InsertAsync(TEntity entity, CancellationToken? cancellationToken);
 	}
 }

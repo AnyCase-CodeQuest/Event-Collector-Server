@@ -1,70 +1,78 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using EventCollectorServer.Database.Interfaces;
 using EventCollectorServer.Infrastructure.Interfaces.Configurations;
-using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace EventCollectorServer.Database.MongoDB
 {
-	public class MongoRepository<TEntity> : IRepository<TEntity> where TEntity : class
+	public class MongoRepository<TEntity> : IRepository<TEntity> where TEntity : class, new()
 	{
-		private readonly IApplicationConfiguration applicationConfiguration;
-		private readonly string connectionString;
+		protected MongoClient Client { get; }
+		protected IMongoDatabase Database { get; }
+		protected IMongoCollection<TEntity> Collection { get; }
 
-		private readonly MongoClient client;
-
-		public MongoRepository(IApplicationConfiguration applicationConfiguration)
+		public MongoRepository(
+			IApplicationConfiguration applicationConfiguration,
+			string collectionName)
 		{
-			connectionString = applicationConfiguration.Secrets.ConnectionString;
+			string connectionString = applicationConfiguration.Secrets.ConnectionString;
+			string databaseName = applicationConfiguration.Secrets.DatabaseName;
 
-			client = new MongoClient(connectionString);
+			Client = new MongoClient(connectionString);
+			Database = Client.GetDatabase(databaseName);
+			Collection = Database.GetCollection<TEntity>(collectionName);
 		}
 
-		public TEntity Single(object key) where TEntity : class, new()
+		/// <inheritdoc cref="IRepository{TEntity}"/>
+		public async Task InsertAsync(TEntity entity, CancellationToken? cancellationToken)
 		{
-			var collection = GetCollection<TEntity>();
-			var query = new QueryDocument("_id", BsonValue.Create(key));
-			var entity = collection.FindOneAs<TEntity>(query);
-
-			if (entity == null)
-				throw new NullReferenceException("Document with key '" + key + "' not found.");
-
-			return entity;
+			await Collection.InsertOneAsync(entity, cancellationToken ?? CancellationToken.None);
 		}
 
-		public IEnumerable<TEntity> All<TEntity>() where TEntity : class, new()
-		{
-			var collection = GetCollection<TEntity>();
-			var entity = collection.FindAllAs<TEntity>();
-			return entity;
-		}
+		//public TEntity Single(object key)
+		//{
+		//	var collection = GetCollection<TEntity>();
+		//	var query = new QueryDocument("_id", BsonValue.Create(key));
+		//	var entity = collection.FindOneAs<TEntity>(query);
 
-		public bool Exists<TEntity>(object key) where TEntity : class, new()
-		{
-			var collection = GetCollection<TEntity>();
-			var query = new QueryDocument("_id", BsonValue.Create(key));
-			var entity = collection.FindOneAs<TEntity>(query);
-			return (entity != null);
-		}
+		//	if (entity == null)
+		//		throw new NullReferenceException("Document with key '" + key + "' not found.");
 
-		public void Save<TEntity>(TEntity item) where TEntity : class, new()
-		{
-			var collection = GetCollection<TEntity>();
-			collection.Save(item);
-		}
+		//	return entity;
+		//}
 
-		public void Delete<TEntity>(object key) where TEntity : class, new()
-		{
-			var collection = GetCollection<TEntity>();
-			var query = new QueryDocument("_id", BsonValue.Create(key));
-			collection.Remove(query);
-		}
+		//public IEnumerable<TEntity> All<TEntity>() where TEntity : class, new()
+		//{
+		//	var collection = GetCollection<TEntity>();
+		//	var entity = collection.FindAllAs<TEntity>();
+		//	return entity;
+		//}
 
-		private MongoCollection GetCollection<TEntity>()
-		{
-			return _db.GetCollection(typeof(TEntity).Name);
-		}
+		//public bool Exists<TEntity>(object key) where TEntity : class, new()
+		//{
+		//	var collection = GetCollection<TEntity>();
+		//	var query = new QueryDocument("_id", BsonValue.Create(key));
+		//	var entity = collection.FindOneAs<TEntity>(query);
+		//	return (entity != null);
+		//}
+
+		//public void Save<TEntity>(TEntity item) where TEntity : class, new()
+		//{
+		//	var collection = GetCollection<TEntity>();
+		//	collection.Save(item);
+		//}
+
+		//public void Delete<TEntity>(object key) where TEntity : class, new()
+		//{
+		//	var collection = GetCollection<TEntity>();
+		//	var query = new QueryDocument("_id", BsonValue.Create(key));
+		//	collection.Remove(query);
+		//}
+
+		//private MongoCollection GetCollection<TEntity>()
+		//{
+		//	return _db.GetCollection(typeof(TEntity).Name);
+		//}
 	}
 }

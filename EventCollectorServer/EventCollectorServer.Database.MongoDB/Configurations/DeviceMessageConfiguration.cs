@@ -13,6 +13,7 @@ namespace EventCollectorServer.Database.MongoDB.Configurations
 			{
 				classMap.AutoMap();
 				classMap.MapIdMember(member => member.Id);
+				classMap.MapMember(member => member.DeviceId);
 				classMap
 					.MapMember(member => member.CreatedOn)
 					.SetDefaultValue(() => DateTime.UtcNow);

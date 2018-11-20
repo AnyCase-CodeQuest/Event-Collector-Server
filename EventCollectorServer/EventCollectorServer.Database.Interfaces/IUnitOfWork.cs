@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using EventCollectorServer.Database.Entities;
 
 namespace EventCollectorServer.Database.Interfaces
 {
@@ -8,5 +7,8 @@ namespace EventCollectorServer.Database.Interfaces
 	/// </summary>
 	public interface IUnitOfWork
 	{
+		IRepository<Device> Devices { get; }
+
+		IRepository<DeviceMessage> DeviceMessages { get; }
 	}
 }
