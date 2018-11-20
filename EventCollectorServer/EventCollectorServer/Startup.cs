@@ -1,4 +1,5 @@
 ﻿using System;
+using EventCollectorServer.Database.Interfaces;
 using EventCollectorServer.DependencyInjection;
 using EventCollectorServer.Infrastructure.Interfaces.Configurations;
 using Microsoft.AspNetCore.Builder;
@@ -38,6 +39,9 @@ namespace EventCollectorServer.Api
 			IServiceProvider serviceProvider = serviceProviderBuilder.Build(services);
 
 			configuration.Bind(serviceProvider.GetRequiredService<IApplicationConfiguration>());
+
+			IEventCollectorServerContext eventCollectorServerContext = serviceProvider.GetRequiredService<IEventCollectorServerContext>();
+			eventCollectorServerContext.Configure();
 
 			return serviceProvider;
 		}
