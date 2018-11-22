@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Api", "EventCollectorServer\EventCollectorServer.Api.csproj", "{5489D63B-39DA-4E67-894B-FF7C811B0CDF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Web.Entities", "EventCollectorServer.Web.Entities\EventCollectorServer.Web.Entities.csproj", "{D14394D7-2D8D-4C84-BB63-12200F0BB903}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Entities", "EventCollectorServer.Database.Entities\EventCollectorServer.Database.Entities.csproj", "{7DD9F687-1E70-41CB-875C-E9161A5325AC}"
@@ -25,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Infras
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generic", "Generic", "{2D9A9AB8-220E-466F-8856-F748A3667625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.DependencyInjection", "EventCollectorServer.DependencyInjection\EventCollectorServer.DependencyInjection.csproj", "{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.DependencyInjection", "EventCollectorServer.DependencyInjection\EventCollectorServer.DependencyInjection.csproj", "{01A67BE8-A6B7-4CED-9B3C-3A09BEA3CC24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Infrastructure.Application", "EventCollectorServer.Infrastructure.Application\EventCollectorServer.Infrastructure.Application.csproj", "{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Infrastructure.Application", "EventCollectorServer.Infrastructure.Application\EventCollectorServer.Infrastructure.Application.csproj", "{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Api", "EventCollectorServer.Api\EventCollectorServer.Api.csproj", "{006FB2A8-327F-416E-ACAD-528BBA67BAF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5489D63B-39DA-4E67-894B-FF7C811B0CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5489D63B-39DA-4E67-894B-FF7C811B0CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5489D63B-39DA-4E67-894B-FF7C811B0CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5489D63B-39DA-4E67-894B-FF7C811B0CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D14394D7-2D8D-4C84-BB63-12200F0BB903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D14394D7-2D8D-4C84-BB63-12200F0BB903}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D14394D7-2D8D-4C84-BB63-12200F0BB903}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +71,10 @@ Global
 		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{354E3EE8-BC41-4CD2-9C3C-D92A6FA41F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006FB2A8-327F-416E-ACAD-528BBA67BAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006FB2A8-327F-416E-ACAD-528BBA67BAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006FB2A8-327F-416E-ACAD-528BBA67BAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006FB2A8-327F-416E-ACAD-528BBA67BAF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

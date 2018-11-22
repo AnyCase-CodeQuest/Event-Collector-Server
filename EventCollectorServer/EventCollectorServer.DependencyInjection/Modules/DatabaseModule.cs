@@ -22,6 +22,11 @@ namespace EventCollectorServer.DependencyInjection.Modules
 				.InstancePerLifetimeScope();
 
 			builder
+				.RegisterType<EventCollectorServerContext>()
+				.As<IEventCollectorServerContext>()
+				.InstancePerLifetimeScope();
+
+			builder
 				.RegisterAssemblyTypes(typeof(MongoRepository<>).Assembly)
 				.AsImplementedInterfaces()
 				.InstancePerLifetimeScope();

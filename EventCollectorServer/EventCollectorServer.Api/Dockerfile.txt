@@ -4,7 +4,7 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY ["EventCollectorServer/EventCollectorServer.csproj", "EventCollectorServer/"]
+COPY ["EventCollectorServer.csproj", "EventCollectorServer/"]
 RUN dotnet restore "EventCollectorServer/EventCollectorServer.csproj"
 COPY . .
 WORKDIR "/src/EventCollectorServer"
