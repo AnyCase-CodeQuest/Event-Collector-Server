@@ -25,9 +25,9 @@ namespace EventCollectorServer.Database.MongoDB
 		}
 
 		/// <inheritdoc cref="IRepository{TEntity}"/>
-		public async Task InsertAsync(TEntity entity, CancellationToken? cancellationToken)
+		public async Task InsertAsync(TEntity entity, CancellationToken? cancellationToken = null)
 		{
-			await Collection.InsertOneAsync(entity, cancellationToken ?? CancellationToken.None);
+			await Collection.InsertOneAsync(entity, new InsertOneOptions(), cancellationToken ?? CancellationToken.None);
 		}
 
 		//public TEntity Single(object key)

@@ -15,6 +15,6 @@ namespace EventCollectorServer.Database.Interfaces
 		/// <param name="entity">The entity.</param>
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns></returns>
-		Task InsertAsync(TEntity entity, CancellationToken? cancellationToken);
+		Task InsertAsync(TEntity entity, CancellationToken? cancellationToken = null);
 	}
 }

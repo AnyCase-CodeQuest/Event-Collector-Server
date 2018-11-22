@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\v1\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -14,11 +13,13 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EventCollectorServer.Api.Contracts\EventCollectorServer.Api.Contracts.csproj" />
     <ProjectReference Include="..\EventCollectorServer.DependencyInjection\EventCollectorServer.DependencyInjection.csproj" />
     <ProjectReference Include="..\EventCollectorServer.Infrastructure.Interfaces\EventCollectorServer.Infrastructure.Interfaces.csproj" />
   </ItemGroup>
