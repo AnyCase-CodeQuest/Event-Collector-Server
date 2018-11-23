@@ -27,10 +27,17 @@ namespace EventCollectorServer.DependencyInjection.Modules
 				.InstancePerLifetimeScope();
 
 			builder
-				.RegisterAssemblyTypes(typeof(MongoRepository<>).Assembly, typeof(IRepository<>).Assembly)
-					.Where(t => t.Name.EndsWith("Repository"))
-				.AsImplementedInterfaces()
+				.RegisterGeneric(typeof(MongoRepository<>))
+				.As(typeof(IRepository<>))
 				.InstancePerLifetimeScope();
+
+			// This can be uncommented when will be implemented any specific repository
+			// https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/
+			//builder
+			//	.RegisterAssemblyTypes(typeof(MongoRepository<>).Assembly, typeof(IRepository<>).Assembly)
+			//		.Where(t => t.Name.EndsWith("Repository"))
+			//	.AsImplementedInterfaces()
+			//	.InstancePerLifetimeScope();
 		}
 	}
 }

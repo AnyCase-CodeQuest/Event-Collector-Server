@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore;
+﻿using EventCollectorServer.Api.Extensions;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
 namespace EventCollectorServer.Api
@@ -12,6 +13,7 @@ namespace EventCollectorServer.Api
 
 		public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 			WebHost.CreateDefaultBuilder(args)
+				.ConfigureAppConfiguration((ctx, builder) => builder.AddAzureSecrets())
 				.UseStartup<Startup>();
 	}
 }

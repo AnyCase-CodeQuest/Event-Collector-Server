@@ -12,6 +12,8 @@ namespace EventCollectorServer.Database.Core
 		public UnitOfWork(IServiceProvider serviceProvider)
 		{
 			this.serviceProvider = serviceProvider;
+
+			var requiredService = this.serviceProvider.GetRequiredService<IRepository<Device>>();
 		}
 
 		public IRepository<Device> Devices => serviceProvider.GetRequiredService<IRepository<Device>>();

@@ -14,13 +14,15 @@ namespace EventCollectorServer.Database.MongoDB
 
 		public MongoRepository(
 			IApplicationConfiguration applicationConfiguration,
-			string collectionName)
+			string collectionName = null)
 		{
 			string connectionString = applicationConfiguration.Secrets.ConnectionString;
 			string databaseName = applicationConfiguration.Secrets.DatabaseName;
 
 			Client = new MongoClient(connectionString);
 			Database = Client.GetDatabase(databaseName);
+
+			collectionName = collectionName ?? $"{typeof(TEntity).Name}s" ;
 			Collection = Database.GetCollection<TEntity>(collectionName);
 		}
 

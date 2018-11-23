@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using EventCollectorServer.Api.Contracts;
 using EventCollectorServer.Database.Entities;
 using EventCollectorServer.Database.Entities.Enums;
 using EventCollectorServer.Database.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventCollectorServer.Api.Controllers.v1
