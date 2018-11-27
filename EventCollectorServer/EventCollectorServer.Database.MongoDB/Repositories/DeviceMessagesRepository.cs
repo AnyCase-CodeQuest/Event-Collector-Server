@@ -20,15 +20,22 @@ namespace EventCollectorServer.Database.MongoDB.Repositories
 
 		public async Task<IList<DeviceMessage>> Get(Guid deviceId, DateTime? from = null, DateTime? to = null)
 		{
+			int findLimit = 1;
+
 			FilterDefinition<DeviceMessage> definition = Builders<DeviceMessage>.Filter.Eq(
 				deviceMessage => deviceMessage.DeviceId,
 				deviceId);
+
+			SortDefinition<DeviceMessage> sortDefinition
+				= Builders<DeviceMessage>.Sort.Descending(deviceMessage => deviceMessage.CreatedOn);
 
 			if (from.HasValue)
 			{
 				definition = Builders<DeviceMessage>.Filter.And(
 					definition,
 					Builders<DeviceMessage>.Filter.Gte(deviceMessage => deviceMessage.CreatedOn, from));
+
+				findLimit = 5000;
 			}
 
 			if (to.HasValue)
@@ -36,10 +43,15 @@ namespace EventCollectorServer.Database.MongoDB.Repositories
 				definition = Builders<DeviceMessage>.Filter.And(
 					definition,
 					Builders<DeviceMessage>.Filter.Lte(deviceMessage => deviceMessage.CreatedOn, to));
+
+				findLimit = 5000;
 			}
 
-			FindOptions<DeviceMessage, DeviceMessage> findOptions = new FindOptions<DeviceMessage, DeviceMessage>();
-			findOptions.Limit = 5000;
+			FindOptions<DeviceMessage, DeviceMessage> findOptions = new FindOptions<DeviceMessage, DeviceMessage>
+			{
+				Limit = findLimit,
+				Sort = sortDefinition
+			};
 
 			IAsyncCursor<DeviceMessage> cursor = await Collection.FindAsync(definition, findOptions);
 			List<DeviceMessage> result = cursor.ToList();

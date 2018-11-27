@@ -45,6 +45,7 @@ namespace EventCollectorServer.Api.Controllers.v1
 		}
 
 		// GET: api/OfficeClimateSensors?deviceId=..
+		// curl -X GET "http://localhost:54281/api/OfficeClimateSensors?deviceId=fa238a69-03ab-40d1-a51c-eb384844d243&from=2018-11-27T00%3A00%3A00.000Z&to=2018-11-27T22%3A00%3A00.000Z" -H "accept: application/json"
 		/// <summary>
 		/// Gets <see cref="DeviceMessage"/> list by provided arguments.
 		/// </summary>
