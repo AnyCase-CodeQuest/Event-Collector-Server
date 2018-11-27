@@ -12,7 +12,6 @@
   <ItemGroup>
     <ProjectReference Include="..\EventCollectorServer.Database.Core\EventCollectorServer.Database.Core.csproj" />
     <ProjectReference Include="..\EventCollectorServer.Database.MongoDB\EventCollectorServer.Database.MongoDB.csproj" />
-    <ProjectReference Include="..\EventCollectorServer.Database.Repositories\EventCollectorServer.Database.Repositories.csproj" />
     <ProjectReference Include="..\EventCollectorServer.Infrastructure.Application\EventCollectorServer.Infrastructure.Application.csproj" />
   </ItemGroup>
 

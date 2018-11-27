@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using EventCollectorServer.Api.Contracts;
 using EventCollectorServer.Database.Entities;
@@ -41,6 +42,27 @@ namespace EventCollectorServer.Api.Controllers.v1
 			};
 
 			await unitOfWork.DeviceMessages.InsertAsync(deviceMessage);
+		}
+
+		// GET: api/OfficeClimateSensors?deviceId=..
+		/// <summary>
+		/// Gets <see cref="DeviceMessage"/> list by provided arguments.
+		/// </summary>
+		/// <param name="deviceId">The  <see cref="Guid"/> device identifier.</param>
+		/// <param name="from">From <see cref="DateTime"/>. Not required parameter.</param>
+		/// <param name="to">To <see cref="DateTime"/>.</param>
+		/// <returns></returns>
+		/// <exception cref="ArgumentException">Difference between 'from' and 'to' dates should be less than one day.</exception>
+		[HttpGet]
+		public async Task<IList<DeviceMessage>> Get([FromQuery] Guid deviceId, [FromQuery] DateTime? from = null, [FromQuery] DateTime? to = null)
+		{
+			if (from.HasValue && to.HasValue && (from.Value - to.Value).TotalDays > 1)
+			{
+				throw new ArgumentException("Difference between 'from' and 'to' dates should be less than one day.");
+			}
+
+
+			return await unitOfWork.DeviceMessages.Get(deviceId, from, to);
 		}
 	}
 }

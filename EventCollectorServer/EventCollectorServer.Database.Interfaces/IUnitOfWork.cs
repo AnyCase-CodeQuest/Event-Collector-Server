@@ -1,4 +1,5 @@
 ﻿using EventCollectorServer.Database.Entities;
+using EventCollectorServer.Database.Interfaces.Repositories;
 
 namespace EventCollectorServer.Database.Interfaces
 {
@@ -9,6 +10,6 @@ namespace EventCollectorServer.Database.Interfaces
 	{
 		IRepository<Device> Devices { get; }
 
-		IRepository<DeviceMessage> DeviceMessages { get; }
+		IDeviceMessagesRepository DeviceMessages { get; }
 	}
 }

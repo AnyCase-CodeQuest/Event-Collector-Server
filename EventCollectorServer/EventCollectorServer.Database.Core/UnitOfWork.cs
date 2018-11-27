@@ -1,6 +1,7 @@
 ﻿using System;
 using EventCollectorServer.Database.Entities;
 using EventCollectorServer.Database.Interfaces;
+using EventCollectorServer.Database.Interfaces.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace EventCollectorServer.Database.Core
@@ -18,6 +19,6 @@ namespace EventCollectorServer.Database.Core
 
 		public IRepository<Device> Devices => serviceProvider.GetRequiredService<IRepository<Device>>();
 
-		public IRepository<DeviceMessage> DeviceMessages => serviceProvider.GetRequiredService<IRepository<DeviceMessage>>();
+		public IDeviceMessagesRepository DeviceMessages => serviceProvider.GetRequiredService<IDeviceMessagesRepository>();
 	}
 }

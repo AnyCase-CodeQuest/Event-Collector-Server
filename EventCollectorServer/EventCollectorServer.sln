@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{FF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Interfaces", "EventCollectorServer.Database.Interfaces\EventCollectorServer.Database.Interfaces.csproj", "{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Repositories", "EventCollectorServer.Database.Repositories\EventCollectorServer.Database.Repositories.csproj", "{9B205244-7FC1-42CC-94AF-73894B503FF2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.Core", "EventCollectorServer.Database.Core\EventCollectorServer.Database.Core.csproj", "{10FA29D7-5C05-46AD-9DE3-448EBCE54812}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Database.MongoDB", "EventCollectorServer.Database.MongoDB\EventCollectorServer.Database.MongoDB.csproj", "{F691FA3F-F0CE-4E11-8623-7A0E788231BD}"
@@ -27,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Infras
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Api", "EventCollectorServer.Api\EventCollectorServer.Api.csproj", "{006FB2A8-327F-416E-ACAD-528BBA67BAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventCollectorServer.Api.Contracts", "EventCollectorServer.Api.Contracts\EventCollectorServer.Api.Contracts.csproj", "{6FFF0E8A-6E83-4434-B1B1-46B02753BE96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventCollectorServer.Api.Contracts", "EventCollectorServer.Api.Contracts\EventCollectorServer.Api.Contracts.csproj", "{6FFF0E8A-6E83-4434-B1B1-46B02753BE96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +41,6 @@ Global
 		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B205244-7FC1-42CC-94AF-73894B503FF2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{10FA29D7-5C05-46AD-9DE3-448EBCE54812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10FA29D7-5C05-46AD-9DE3-448EBCE54812}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10FA29D7-5C05-46AD-9DE3-448EBCE54812}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -82,7 +76,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{7DD9F687-1E70-41CB-875C-E9161A5325AC} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
 		{902FFB4A-9CA1-4635-8C7A-FFA06EF854DD} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
-		{9B205244-7FC1-42CC-94AF-73894B503FF2} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
 		{10FA29D7-5C05-46AD-9DE3-448EBCE54812} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
 		{F691FA3F-F0CE-4E11-8623-7A0E788231BD} = {FF94BDA5-D028-4516-9D7C-C4E35B9CAE22}
 		{EA4C568A-248F-4315-8919-F728154D99B2} = {99947C9E-258C-4505-A60E-6518AE2CF73D}
